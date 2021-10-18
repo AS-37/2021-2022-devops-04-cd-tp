@@ -107,7 +107,7 @@ jobs:
       - checkout
       - run:
           name: Heroku Deploy
-          command: git push https://heroku:$HEROKU_API_KEY@git.heroku.com/agile-coast-99905.git HEAD:master 
+          command: git push https://heroku:64529f3a-ee24-4cea-91d8-deaed3a800db@git.heroku.com/agile-coast-99905.git HEAD:master 
       - run:
           name: Smoke Test
           command: | 
