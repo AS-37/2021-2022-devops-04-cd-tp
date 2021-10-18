@@ -107,10 +107,14 @@ jobs:
       - checkout
       - run:
           name: Heroku Deploy
-          command: echo todo && false
+          command: git push https://heroku:64529f3a-ee24-4cea-91d8-deaed3a800db@git.heroku.com/agile-coast-99905.git HEAD:master 
       - run:
           name: Smoke Test
-          command: echo todo && false
+          command: HTTPCODE=`curl -s -o /dev/null -w "%{http_code}" https://agile-coast-99905.herokuapp.com/`
+if [ "$HTTPCODE" -ne 200 ];then
+    echo "heroku app not responding, failing deploy"
+    exit 1
+fi
 
 workflows:
   version: 2
