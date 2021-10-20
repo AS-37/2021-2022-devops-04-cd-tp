@@ -22,7 +22,8 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
           ssl: {
             rejectUnauthorized: false
           },
-        },
+        
+        }, 
       }),
       inject: [ConfigService],
     }),
