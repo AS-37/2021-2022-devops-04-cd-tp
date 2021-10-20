@@ -49,7 +49,7 @@ jobs:
           at: /tmp
       - run:
           name: install netlily
-          command: yarn add netlify
+          command: yarn add -D netlify-cli
       - run:
           name: deploy app
           command: yarn netlify deploy --prod --dir=/tmp/server-doc
